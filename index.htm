@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body>
+	<header>
+		Softeon
+	</header>
+	<main>
+		<form action="home.htm">
+			<fieldset>
+				<legend>Login</legend>
+				<div>
+					<label for="namefiled" class="lbl-field">Enter your name: </label>
+					<input type="text" name="uName" id="namefield" value="U101" disabled />
+				</div>
+				<div>
+					<label>
+						<span class="lbl-field">Enter your password: </span>
+						<input type="password" name="uPass" />
+					</label>
+				</div>
+				<div>
+					<label><input type="radio" name="role" value="adm">Admin</label>
+					<label><input type="radio" name="role" value="std">Student</label>
+					<label><input type="radio" name="role" value="lec">Lecturer</label>
+				</div>
+				<div>
+					<label>
+						<span class="lbl-field">Select an Location:</span>
+						<input type="text" name="loc" list="myloc" />
+					</label>
+
+					<datalist id="myloc">
+						<option>Chennai</option>
+						<option>Coimbatore</option>
+						<option>Cochi</option>
+						<option>Ernakulam</option>
+						<option>Trisur</option>
+						<option>Trivandrum</option>
+					</datalist>
+				</div>
+				<div id="cent">
+					<input type="submit" value="Login" />
+					<input type="reset" value="Clear" />
+				</div>
+			</fieldset>
+		</form>
+	</main>
+	<footer>
+		copyright <span>@2022</span>
+	</footer>
+</body>
+</html>

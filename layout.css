@@ -1,0 +1,30 @@
+header{
+	height: 100px;
+	border-bottom: 1px solid;
+	background-color: #a1d2e3;
+}
+
+main{
+	height: 450px;
+}
+footer{
+	height: 50px;
+	border-top: 1px solid;
+	background-color: #a1d2e3;
+}
+
+form{
+	width: 30%;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.lbl-field{
+	display: inline-block;
+	width: 150px;
+}
+
+#cent{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

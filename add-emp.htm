@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form name="emp">
+		<div>
+			Enter Employee Id: <input type="text" name="id" />
+		</div>
+		<div>
+			Enter Employee Name: <input type="text" name="fname" />
+		</div>
+		<div>
+			Enter the salary: <input type="text" name="salary" />
+		</div>
+		<div>
+			<button onclick="add(event)">Click</button>
+		</div>
+	</form>
+
+	<div onclick="show()">
+		Show Table
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th><th>Name</th><th>Salary</th>
+			</tr>
+		</thead>
+		<tbody id="emptbl">
+		</tbody>
+	</table>
+
+	<script type="text/javascript" src="add-emp.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Ajax</title>
+</head>
+<body>
+	<input type="text" id="pincode" />
+	<button onclick="show()">Show Post Offices</button>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Branch Type</th>
+				<th>Country</th>
+				<th>Circle</th>
+				<th>District</th>
+				<th>Division</th>
+			</tr>
+		</thead>
+		<tbody id="table-body">
+		</tbody>
+	</table>
+
+
+
+	<script type="text/javascript">
+		function show(){
+			let pin = document.getElementById("pincode").value;
+			let tbody = document.getElementById("table-body");
+
+			var req = new XMLHttpRequest();
+			req.open("GET","https://api.postalpincode.in/pincode/"+pin);
+			req.send();
+
+			req.onreadystatechange = function(){
+				if(this.readyState === 4 && this.status === 200) {
+					let result = JSON.parse(this.responseText);
+					let postOffices = result[0].PostOffice;
+					for(let i=0; i<postOffices.length; i++){
+						let d = postOffices[i];
+
+						let row = "<tr>";
+							row += "<td>"+d.Name+"</td>";
+							row += "<td>"+d.BranchType+"</td>";
+							row += "<td>"+d.Country+"</td>";
+							row += "<td>"+d.Circle+"</td>";
+							row += "<td>"+d.District+"</td>";
+							row += "<td>"+d.Division+"</td>";
+							row += "</tr>";
+						tbody.innerHTML += row;
+					};
+				}
+			}
+		}
+	</script>
+</body>
+</html>

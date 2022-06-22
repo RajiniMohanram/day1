@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<style type="text/css">
+		.name-field{
+			width: 100px;
+		}
+
+		.emp-id{
+			width: 50px;
+		}
+
+		.phone{
+			width: 125px;
+		}
+
+		span{
+			display: inline-block;
+			width: 70px;
+			padding: 2px;
+			background-color: #64b06d;
+			border: 1px solid;
+		}
+
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td class="emp-id">198</td>
+			<td class="name-field">Donald</td>
+			<td class="name-field">OConnell</td>
+			<td class="name-field">DOCONNEL</td>
+			<td class="phone">650.507.9833</td>
+			<td class="name-field">21-JUN-07</td>
+			<td class="name-field">SH_CLERK</td>
+			<td>
+				<span onclick="greet('Donald','Clerk')">Action</span>
+			</td>
+		</tr>
+		<tr>
+			<td>199</td>
+			<td>Douglas</td>
+			<td>Grant</td>
+			<td>DGRANT</td>
+			<td>650.507.9844</td>
+			<td>13-JAN-08</td>
+			<td>SH_CLERK</td>
+			<td>
+				<span onclick="greet('Douglas')">Action</span>
+			</td>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>Steven</td>
+			<td>King</td>
+			<td>SKING</td>
+			<td>515.123.4567</td>
+			<td>17-JUN-03</td>
+			<td>AD_PRES</td>
+			<td>
+				<span onclick="greet('Steven')">Action</span>
+			</td>
+		</tr>
+		<tr>
+			<td>101</td>
+			<td>Neena</td>
+			<td>Kochhar</td>
+			<td>NKOCHHAR</td>
+			<td>515.123.4568</td>
+			<td>21-SEP-05</td>
+			<td>AD_VP</td>
+			<td>
+				<span onclick="greet('Neena')">Action</span>
+			</td>
+		</tr>
+		<tr>
+			<td>104</td>
+			<td>Bruce</td>
+			<td>Ernst</td>
+			<td>BERNST</td>
+			<td>590.423.4568</td>
+			<td>21-MAY-07</td>
+			<td>IT_PROG</td>
+			<td>
+				<span onclick="greet('Bruce')">Action</span>
+			</td>
+		</tr>
+	</table>
+
+
+	<script type="text/javascript">
+		let greet = (name)=>{ alert('Hello '+name); }
+		
+	</script>
+</body>
+</html>

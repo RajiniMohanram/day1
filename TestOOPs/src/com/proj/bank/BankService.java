@@ -1,17 +1,18 @@
 package com.proj.bank;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankService {
 	
-	private Account accounts[];
-	private static int last;
+	private List<Account> accounts;
 	
 	public BankService(int size) {
-		accounts = new Account[size];
+		accounts = new ArrayList<Account>();
 	}
 	
 	public void addAccount(String line) {
-		accounts[last] = Account.createAccount(line);
-		last++;
+		accounts.add(Account.createAccount(line));
 	}
 	
 	public void displayAllAccounts() {
