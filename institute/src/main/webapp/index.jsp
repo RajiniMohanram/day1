@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="banner.jsp">
+		<jsp:param value="Guest" name="user"/>
+	</jsp:include>
+	
 	<form action="login.do" method="post">
 		<div>
 			<label>
@@ -23,5 +27,6 @@
 			<input type="reset" value="Clear" />
 		</div>
 	</form>
+	<span style="color:red">${err}</span>
 </body>
 </html>

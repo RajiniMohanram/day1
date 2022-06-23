@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Course;
+
 /**
  * Servlet implementation class LoginController
  */
@@ -36,12 +38,16 @@ public class LoginController extends HttpServlet {
 		if(username.equals("admin")) {
 			RequestDispatcher rd = request.getRequestDispatcher("add-course.jsp");
 			rd.forward(request, response);
-		}else {
-			Map<String,String> userCourses = new HashMap<>();
+		}else if(username.equals("student")) {
+			Map<String,Course> userCourses = new HashMap<>();
 			HttpSession session = request.getSession();
 			session.setAttribute("userCourses", userCourses);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+			rd.forward(request, response);
+		}else {
+			request.setAttribute("err", "Invalid Username/Password");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}
 	}

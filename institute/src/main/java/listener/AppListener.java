@@ -8,6 +8,8 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+import model.Course;
+
 /**
  * Application Lifecycle Listener implementation class AppListener
  *
@@ -35,7 +37,7 @@ public class AppListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce)  { 
          // TODO Auto-generated method stub
     	ServletContext ctx = sce.getServletContext();
-    	Map<String,String> courses = new HashMap<>();
+    	Map<String,Course> courses = new HashMap<>();
     	ctx.setAttribute("courses", courses);
     	
     }

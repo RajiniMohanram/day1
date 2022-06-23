@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Course;
+
 /**
  * Servlet implementation class AddCourse
  */
@@ -30,10 +32,15 @@ public class AddCourse extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletContext ctx = request.getServletContext();
-		Map<String,String> allCourses = (Map<String,String>)ctx.getAttribute("courses");
+		Map<String,Course> allCourses = (Map<String,Course>)ctx.getAttribute("courses");
 		
+		String courseCode = request.getParameter("courseCode");
 		String courseName = request.getParameter("courseName");
-		allCourses.put(courseName, courseName);
+		int duration = Integer.parseInt(request.getParameter("duration"));
+		double fees = Double.parseDouble(request.getParameter("fees"));
+		
+		Course course = new Course(courseCode, courseName, duration, fees);
+		allCourses.put(course.getCourseCode(), course);
 		ctx.setAttribute("courses", allCourses);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("add-course.jsp");
