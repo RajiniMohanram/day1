@@ -3,7 +3,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	
-
+<%@ taglib uri="" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,12 +14,15 @@
 	<jsp:include page="banner.jsp">
 		<jsp:param value="Student" name="user"/>
 	</jsp:include>
+	
 	<form action="join-courses.do" method="post">
 		<c:forEach var="c" items="${applicationScope.courses}">
 			<c:if test="${c.value.duration > 2 }">
 				<div>
 					<label> 
 						<input type="checkbox" name="course" value="${c.key}">
+					
+						
 						${c.value.courseName}
 					</label>
 				</div>		
